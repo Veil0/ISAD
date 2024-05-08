@@ -105,7 +105,7 @@ if __name__ == "__main__":
 
 
     if not solved:
-        print("You have failed to escape. Further archeologists gaze apon your remains i") # Did not reach the end.
+        print("You have failed to escape. Further archeologists gaze apon your remains in bafflement") # Did not reach the end.
 
 
     for i in range(len(grid)):
