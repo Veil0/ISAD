@@ -1,3 +1,4 @@
+import Viewer
 EMPTY = 0
 WALL = 1
 START = 2
@@ -11,40 +12,16 @@ WEST = 'w'
 
 if __name__ == "__main__":
     grid = [
-        [ WALL,  WALL,  WALL,  WALL,  WALL,  WALL,  WALL,  WALL,  WALL, WALL],
-        [START, EMPTY,  WALL,  WALL, EMPTY, EMPTY, EMPTY, EMPTY,  WALL, WALL],
-        [ WALL, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY,  WALL, EMPTY,  WALL, WALL],
+        [ EMPTY, EMPTY,  WALL,  WALL,  WALL,  WALL,  WALL,  WALL,  WALL, WALL],
+        [EMPTY, EMPTY,  EMPTY,  WALL, EMPTY, EMPTY, EMPTY, EMPTY,  WALL, WALL],
+        [ WALL, EMPTY, WALL, EMPTY, EMPTY, EMPTY,  WALL, EMPTY,  WALL, WALL],
         [ WALL,  WALL,  WALL,  WALL, EMPTY,  WALL, EMPTY,  WALL, EMPTY, WALL],
-        [ WALL, EMPTY, EMPTY, EMPTY, EMPTY,  WALL, EMPTY, EMPTY, EMPTY, WALL],
+        [ WALL, EMPTY, WALL, EMPTY, EMPTY,  WALL, EMPTY, EMPTY, EMPTY, WALL],
         [ WALL,  WALL, EMPTY,  WALL,  WALL, EMPTY, EMPTY,  WALL, EMPTY, WALL],
-        [ WALL,  WALL, EMPTY, EMPTY, EMPTY, EMPTY,  WALL,  WALL, EMPTY,  END],
+        [ WALL,  START, EMPTY, EMPTY, EMPTY, EMPTY,  WALL,  WALL, EMPTY,  END],
         [ WALL,  WALL,  WALL,  WALL,  WALL,  WALL,  WALL,  WALL,  WALL, WALL],
     ]
-                    
-    for i in range(len(grid)):
-        for j in range(len(grid[i])):
-            
-            if grid[i][j] == EMPTY:
-                print("  ", end = "")
-                    
-            elif grid[i][j] == WALL:
-                print("##", end = "")
-                    
-            elif grid[i][j] == START:
-                print("^^", end = "")
-                    
-            elif grid[i][j] == END:
-                print("$$", end = "")
-                    
-            elif grid[i][j] == VISITED:
-                print("..", end = "")
-                    
-            else:
-                raise AssertionError
-            
-        print()
-
-
+    Viewer.view(grid)
     print("Find a solution to get from ^^ to $$, using the characters " 
         + "'" + NORTH + "', '" + EAST + "', '" + SOUTH + "' and '" + WEST + "'"
         + " (for north, east, south and west).")
@@ -106,27 +83,6 @@ if __name__ == "__main__":
 
     if not solved:
         print("MESSAGE 5") # Did not reach the end.
+    Viewer.view(grid)
 
-
-    for i in range(len(grid)):
-        for j in range(len(grid[i])):
-            
-            if grid[i][j] == EMPTY:
-                print("  ", end = "")
-                    
-            elif grid[i][j] == WALL:
-                print("##", end = "")
-                    
-            elif grid[i][j] == START:
-                print("^^", end = "")
-                    
-            elif grid[i][j] == END:
-                print("$$", end = "")
-                    
-            elif grid[i][j] == VISITED:
-                print("..", end = "")
-                    
-            else:
-                raise AssertionError
-            
-        print()
+    
